@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SARTORIAL — Men's Fashion Advisor</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header__brand">
+        <span class="header__logo">S</span>
+        <div>
+          <h1 class="header__title">SARTORIAL</h1>
+          <p class="header__tagline">Men's Fashion Advisor</p>
+        </div>
+      </div>
+      <p class="header__season" id="currentSeason"></p>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="heroSection">
+      <div class="hero__content">
+        <h2 class="hero__headline">Dress with<br /><em>intention.</em></h2>
+        <p class="hero__sub">Tell us what you're wearing today and we'll craft the perfect outfit around it — colours, styles, and pairings drawn from the latest trends.</p>
+        <button class="btn btn--primary" id="startBtn">Get Started</button>
+      </div>
+      <div class="hero__accent"></div>
+    </section>
+
+    <!-- Selection Section -->
+    <section class="selector hidden" id="selectorSection">
+      <div class="selector__step">
+        <span class="selector__step-num">01</span>
+        <h3 class="selector__heading">What are you wearing today?</h3>
+        <p class="selector__sub">Choose the clothing item you've already picked out.</p>
+      </div>
+
+      <div class="selector__grid" id="categoryGrid">
+        <button class="card card--category" data-category="t-shirt">
+          <div class="card__icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20 12L12 20V24L20 22V52H44V22L52 24V20L44 12H40C40 16 36 20 32 20C28 20 24 16 24 12H20Z"/>
+            </svg>
+          </div>
+          <span class="card__label">T-Shirt</span>
+        </button>
+        <button class="card card--category" data-category="shirt">
+          <div class="card__icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20 12L12 20V24L20 20V52H44V20L52 24V20L44 12H40C40 16 36 20 32 20C28 20 24 16 24 12H20Z"/>
+              <line x1="32" y1="20" x2="32" y2="52"/>
+              <circle cx="32" cy="28" r="1.5" fill="currentColor"/>
+              <circle cx="32" cy="36" r="1.5" fill="currentColor"/>
+              <circle cx="32" cy="44" r="1.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <span class="card__label">Dress Shirt</span>
+        </button>
+        <button class="card card--category" data-category="polo">
+          <div class="card__icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20 12L14 18V22L20 20V42H44V20L50 22V18L44 12H40C40 16 36 18 32 18C28 18 24 16 24 12H20Z"/>
+              <path d="M28 12V18" /><path d="M36 12V18" />
+              <circle cx="32" cy="24" r="1.5" fill="currentColor"/>
+              <circle cx="32" cy="30" r="1.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <span class="card__label">Polo</span>
+        </button>
+        <button class="card card--category" data-category="hoodie">
+          <div class="card__icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20 16L12 24V28L20 26V52H44V26L52 28V24L44 16C44 16 40 12 32 12C24 12 20 16 20 16Z"/>
+              <path d="M26 16C26 16 28 22 32 22C36 22 38 16 38 16"/>
+              <path d="M28 36H36V44H28Z"/>
+            </svg>
+          </div>
+          <span class="card__label">Hoodie</span>
+        </button>
+        <button class="card card--category" data-category="jacket">
+          <div class="card__icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20 12L10 22V52H26V12H20Z"/>
+              <path d="M44 12L54 22V52H38V12H44Z"/>
+              <path d="M26 12H38V52H26Z"/>
+              <path d="M26 20L30 24V52"/>
+              <path d="M38 20L34 24V52"/>
+            </svg>
+          </div>
+          <span class="card__label">Jacket</span>
+        </button>
+        <button class="card card--category" data-category="blazer">
+          <div class="card__icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M18 12L8 22V56H28V12H18Z"/>
+              <path d="M46 12L56 22V56H36V12H46Z"/>
+              <path d="M28 12H36V56H28Z"/>
+              <path d="M28 18L32 26L36 18"/>
+              <path d="M32 26V56"/>
+              <circle cx="30" cy="34" r="1" fill="currentColor"/>
+              <circle cx="30" cy="42" r="1" fill="currentColor"/>
+            </svg>
+          </div>
+          <span class="card__label">Blazer</span>
+        </button>
+        <button class="card card--category" data-category="trousers">
+          <div class="card__icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M18 10H46V22L38 56H34L32 30L30 56H26L18 22V10Z"/>
+              <line x1="18" y1="16" x2="46" y2="16"/>
+            </svg>
+          </div>
+          <span class="card__label">Trousers</span>
+        </button>
+        <button class="card card--category" data-category="jeans">
+          <div class="card__icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M18 10H46V22L38 56H34L32 28L30 56H26L18 22V10Z"/>
+              <line x1="18" y1="16" x2="46" y2="16"/>
+              <path d="M26 16L28 30"/>
+              <path d="M38 16L36 30"/>
+            </svg>
+          </div>
+          <span class="card__label">Jeans</span>
+        </button>
+        <button class="card card--category" data-category="shorts">
+          <div class="card__icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M18 14H46V24L40 42H34L32 30L30 42H24L18 24V14Z"/>
+              <line x1="18" y1="20" x2="46" y2="20"/>
+            </svg>
+          </div>
+          <span class="card__label">Shorts</span>
+        </button>
+        <button class="card card--category" data-category="sneakers">
+          <div class="card__icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M10 36L14 28H32L42 24L52 28V36L54 40V44H8V40L10 36Z"/>
+              <path d="M14 28L16 36"/>
+              <circle cx="22" cy="36" r="2"/>
+              <path d="M8 44H54V48H8Z"/>
+            </svg>
+          </div>
+          <span class="card__label">Sneakers</span>
+        </button>
+        <button class="card card--category" data-category="boots">
+          <div class="card__icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20 16H38V40L44 44V48L50 50V54H14V50L20 48V16Z"/>
+              <line x1="20" y1="24" x2="38" y2="24"/>
+              <line x1="20" y1="32" x2="38" y2="32"/>
+            </svg>
+          </div>
+          <span class="card__label">Boots</span>
+        </button>
+        <button class="card card--category" data-category="accessories">
+          <div class="card__icon">
+            <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="32" cy="20" r="10"/>
+              <path d="M22 20C22 20 22 30 22 34C22 42 26 46 32 46C38 46 42 42 42 34V20"/>
+              <rect x="28" y="46" width="8" height="6"/>
+              <rect x="24" y="52" width="16" height="4"/>
+            </svg>
+          </div>
+          <span class="card__label">Accessories</span>
+        </button>
+      </div>
+
+      <!-- Color Picker -->
+      <div class="color-picker hidden" id="colorPicker">
+        <div class="selector__step">
+          <span class="selector__step-num">02</span>
+          <h3 class="selector__heading">What colour is your <span id="selectedItemName"></span>?</h3>
+          <p class="selector__sub">Pick the closest match.</p>
+        </div>
+        <div class="color-picker__grid" id="colorGrid"></div>
+      </div>
+
+      <!-- Occasion Picker -->
+      <div class="occasion-picker hidden" id="occasionPicker">
+        <div class="selector__step">
+          <span class="selector__step-num">03</span>
+          <h3 class="selector__heading">What's the occasion?</h3>
+          <p class="selector__sub">This helps us tailor the vibe.</p>
+        </div>
+        <div class="occasion-picker__grid" id="occasionGrid">
+          <button class="card card--occasion" data-occasion="casual">
+            <span class="card__occasion-icon">&#9752;</span>
+            <span class="card__label">Casual</span>
+            <span class="card__desc">Everyday, relaxed</span>
+          </button>
+          <button class="card card--occasion" data-occasion="smart-casual">
+            <span class="card__occasion-icon">&#9733;</span>
+            <span class="card__label">Smart Casual</span>
+            <span class="card__desc">Polished but relaxed</span>
+          </button>
+          <button class="card card--occasion" data-occasion="business">
+            <span class="card__occasion-icon">&#9878;</span>
+            <span class="card__label">Business</span>
+            <span class="card__desc">Office & meetings</span>
+          </button>
+          <button class="card card--occasion" data-occasion="date-night">
+            <span class="card__occasion-icon">&#9829;</span>
+            <span class="card__label">Date Night</span>
+            <span class="card__desc">Impress & charm</span>
+          </button>
+          <button class="card card--occasion" data-occasion="streetwear">
+            <span class="card__occasion-icon">&#9889;</span>
+            <span class="card__label">Streetwear</span>
+            <span class="card__desc">Bold & urban</span>
+          </button>
+          <button class="card card--occasion" data-occasion="formal">
+            <span class="card__occasion-icon">&#9827;</span>
+            <span class="card__label">Formal</span>
+            <span class="card__desc">Black tie & events</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results hidden" id="resultsSection">
+      <div class="results__header">
+        <button class="btn btn--ghost" id="backBtn">&larr; Start Over</button>
+        <div class="results__context" id="resultsContext"></div>
+      </div>
+
+      <!-- Colour Recommendations -->
+      <div class="results__block">
+        <h3 class="results__title">Recommended Colours</h3>
+        <p class="results__subtitle">Colours that pair perfectly with your piece</p>
+        <div class="palette" id="paletteGrid"></div>
+      </div>
+
+      <!-- Outfit Suggestions -->
+      <div class="results__block">
+        <h3 class="results__title">Complete Outfit Ideas</h3>
+        <p class="results__subtitle">Put-together looks for your occasion</p>
+        <div class="outfits" id="outfitGrid"></div>
+      </div>
+
+      <!-- Style Tips -->
+      <div class="results__block">
+        <h3 class="results__title">Style Tips & Trends</h3>
+        <p class="results__subtitle">Insights from the latest collections</p>
+        <div class="tips" id="tipsGrid"></div>
+      </div>
+
+      <!-- Do's and Don'ts -->
+      <div class="results__block">
+        <h3 class="results__title">Do's & Don'ts</h3>
+        <div class="dos-donts" id="dosDonts"></div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>SARTORIAL &mdash; Curated style for the modern gentleman</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
