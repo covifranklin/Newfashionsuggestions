@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
+
+@layer base {
+  body {
+    @apply font-sans;
+  }
+}
+
+/* Light mode prose code blocks */
+.prose code {
+  @apply bg-gray-100 px-1.5 py-0.5 rounded text-sm;
+}
+
+.prose pre {
+  @apply bg-gray-100 p-4 rounded-lg overflow-x-auto mb-4;
+}
+
+/* Dark mode overrides */
+.dark .prose code {
+  @apply bg-charcoal-700;
+}
+
+.dark .prose pre {
+  @apply bg-charcoal-800;
+}
+
+.dark .prose hr {
+  @apply border-charcoal-700;
+}
+
+/* Prose styles for MDX content */
+.prose {
+  @apply max-w-none;
+}
+
+.prose h1 {
+  @apply font-serif text-3xl font-bold mb-6 mt-10;
+}
+
+.prose h2 {
+  @apply font-serif text-2xl font-semibold mb-4 mt-8;
+}
+
+.prose h3 {
+  @apply font-serif text-xl font-semibold mb-3 mt-6;
+}
+
+.prose p {
+  @apply mb-4 leading-relaxed text-base;
+}
+
+.prose ul {
+  @apply list-disc pl-6 mb-4 space-y-1;
+}
+
+.prose ol {
+  @apply list-decimal pl-6 mb-4 space-y-1;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-teal pl-4 italic my-6 opacity-90;
+}
+
+.prose a {
+  @apply text-teal underline underline-offset-2 hover:text-teal-light transition-colors;
+}
+
+.prose pre code {
+  @apply bg-transparent p-0;
+}
+
+.prose hr {
+  @apply border-gray-200 my-8;
+}
+
+.prose strong {
+  @apply font-semibold;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-fade-in-delay {
+  animation: fadeIn 0.6s ease-out 0.15s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in-delay-2 {
+  animation: fadeIn 0.6s ease-out 0.3s forwards;
+  opacity: 0;
+}
