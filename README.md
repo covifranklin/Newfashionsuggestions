@@ -1,21 +1,63 @@
-# SARTORIAL — Men's Fashion Advisor
+# Covi Franklin — Personal Website
 
-A sleek, browser-based fashion recommendation app for young men. Select a clothing item you're planning to wear, pick its colour, choose your occasion, and get curated outfit suggestions — colour pairings, complete looks, style tips, and do's & don'ts based on current trends.
-
-## Features
-
-- **12 clothing categories** — t-shirts, dress shirts, polos, hoodies, jackets, blazers, trousers, jeans, shorts, sneakers, boots, accessories
-- **28 colour options** with hand-crafted pairing rules for every combination
-- **6 occasion modes** — casual, smart-casual, business, date night, streetwear, formal
-- **Colour palette recommendations** with descriptive pairing notes
-- **Complete outfit builders** that assemble full looks around your chosen piece
-- **Trend-aware style tips** for each occasion
-- **Do's & Don'ts** tailored to each dress code
+Personal website for Covi Franklin, built with Next.js 14, TypeScript, and Tailwind CSS.
 
 ## Getting Started
 
-Open `index.html` in any modern browser. No build tools, no dependencies, no server required.
+```bash
+npm install
+npm run dev
+```
 
-## Design
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-The UI uses a muted, sophisticated colour palette (dark backgrounds, gold accents, serif headings) designed to reflect the elegance the app recommends.
+## Stack
+
+- **Next.js 14** (App Router)
+- **TypeScript**
+- **Tailwind CSS**
+- **MDX** via `next-mdx-remote` + `gray-matter` for blog posts
+- Deploy-ready for **Vercel**
+
+## Project Structure
+
+```
+src/
+  app/
+    page.tsx          # Home / Landing
+    about/page.tsx    # About
+    writing/page.tsx  # Blog list
+    writing/[slug]/   # Blog post detail
+    contact/page.tsx  # Contact
+  components/
+    Header.tsx        # Site header with nav and theme toggle
+    Footer.tsx        # Site footer
+    ThemeProvider.tsx  # Dark/light mode context
+  lib/
+    mdx.ts            # MDX utilities (reading, parsing, frontmatter)
+content/
+  posts/              # Drop .mdx files here to add blog posts
+```
+
+## Adding Blog Posts
+
+Create a new `.mdx` file in `content/posts/` with frontmatter:
+
+```mdx
+---
+title: "Your Post Title"
+date: "2025-03-15"
+excerpt: "A short description of the post."
+tags:
+  - AI Governance
+  - Policy
+---
+
+Your markdown content here.
+```
+
+The post will appear automatically on the Writing page, sorted by date.
+
+## Deploy
+
+Push to a GitHub repository and connect it to [Vercel](https://vercel.com) for automatic deployments.
